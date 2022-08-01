@@ -1,0 +1,374 @@
+body {
+  font-family:"Hiragino Kaku Gothic ProN","Helvetica Nueu", "Arial", "Hiragino Sans","Meiryo", "sans-serif" ;
+
+  font-size: 16px;
+}
+
+.wrapper {
+  max-width: 1080px;
+  padding: 0 40px;
+  margin: 0 auto;
+}
+
+//セクションヘッダーの装飾
+.section-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    background-color: #000;
+    bottom: 0;
+    left: 0;
+  }
+
+  h2 {
+    font-size: 36px;
+    margin-right: 18px;
+
+    span {
+      color: #FEAF00;
+    }
+  }
+
+  p {
+    font-size: 18px;
+  }
+}
+
+//-----------------------------------
+//header
+//-----------------------------------
+#header{
+  position: fixed;
+  box-shadow: #ccc 0 0px 7px;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background: #fff;
+
+  .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 72px;
+      
+    .logo-word {
+      display: block;
+      width: 180px;
+      height: 100%;
+      font-family: "Bellota";
+      font-weight: normal;
+      font-size: 56px;
+      font-style: italic;
+      line-height: normal;
+      border: 1px solid #000;
+      text-align: center;
+    }
+
+    #header-nav {
+      .nav-container {
+        display: flex;
+
+        li {
+          margin-right: 40px;
+        }
+      }
+    }
+
+    //ハンバーガーボタン
+    #humburger-btn {
+      display: none;
+      
+      .material-icons {
+        display: block;
+        font-size: 40px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    } 
+  }
+
+  // 隠しメニュー
+  #hidden-nav-container {
+    background: #000;
+
+    // ##↓全体にするか、320pxか迷う
+    width: 320px;
+    // width: 100%;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: -4000px;
+    z-index: 100;
+    opacity: 0;
+    transition: .3s;
+   
+
+    //close Menuのアイコン
+    #close-icon-container{
+      padding: 8px 8px;
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+      cursor: pointer;
+      width: 140px;
+
+      &:hover {
+        .material-icons {
+          color: #FEAF00;
+        }
+
+        p {
+          color: #FEAF00;
+        }
+      }
+
+      .material-icons {
+        color: #fff;
+      }
+      
+      p {
+        color: #fff;
+      }
+    }
+
+    #hidden-nav {
+      position:absolute;
+      text-align: center;
+
+      //##中心よりは上から〇〇pxと指定した方が良い？
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+        
+      .hidden-home-link {
+        display: block;
+        font-family: "Bellota";
+        font-weight: normal;
+        font-size: 28px;
+        font-style: italic;
+        line-height: normal;
+        color: #fff;
+        border: 1px solid #fff;
+        text-align: center;
+        width: 90px;
+        margin-bottom: 24px;
+
+        &:hover {
+          color: #FEAF00;
+          border: 1px solid #FEAF00;
+        }
+      }
+
+      .nav-container {
+        li {
+          margin-bottom: 24px;
+        }
+
+        a {
+          display: inline-block;
+          color: #fff;
+
+          &:hover {
+            // border-bottom: 1px solid #FEAF00;
+            color: #FEAF00;
+          }
+       }
+      }
+    }  
+  }
+
+  //隠しメニューOpen時のcss
+  &.open {
+    #hidden-nav-container{
+      right: 0;
+      opacity: .85;
+    }
+
+    #humburger-icon {
+      color: #fff;
+      background: gray;
+    }
+  }
+}
+
+// --------------------------------
+//MainVisual
+//--------------------------------
+#main-visual{
+  width: 100%;
+  height: 300px;
+  background: #F2F2F2;
+  position: relative;
+
+  .sitename-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  #site-name {
+    font-family: "Myriad Pro";
+    font-weight: normal;
+    font-size: 70px;
+    letter-spacing: 12px;
+  }
+
+  .subsite-name {
+    font-family: "Myriad Pro";
+    font-size: 24px;
+    letter-spacing: 12px;
+  }
+}
+
+
+//----------------------------
+//Contact Form
+//----------------------------
+#contact-form {
+  padding: 48px 200px 72px;
+
+  .section-header {
+    h2 {
+      letter-spacing: 2px;
+    }
+
+    &::before {
+      width: 504px;
+    }
+  }
+  
+
+  #form-content {
+    .necessary-content {
+      display: flex;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .normal-content {
+      margin-bottom: 8px;
+    }
+
+      span {
+        height: 20px;
+        margin-left: 8px;
+        padding: 0 10px;
+        font-size: 14px;
+        color: #fff;
+        background: #FEAF00;
+        border-radius: 2px;
+      }
+
+    dd {
+      margin-bottom: 48px;
+      
+      .text-form {
+        width: 100%;
+        height: 40px;
+        background-color: #F2F2F2;
+        border: 1px solid #828282;
+        border-radius: 3px;
+        padding: 0 0 0 8px;
+      }
+    }
+
+    // お問い合わせ内容
+    #inquiry {
+      width: 100%;
+      background-color: #F2F2F2;
+      border: 1px solid #828282;
+      border-radius: 3px;
+      padding-left: 8px;
+    }
+
+    .contact-btn {
+      height: 56px;
+      width: 224px;
+      margin: 64px auto 0;
+
+      #submit-btn {
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        background: #787878;
+        font-weight: bold;
+        border: none;
+        border-radius: 100px;
+        cursor: pointer;
+        padding: 0;
+
+        &:hover {
+          background: #000;
+        }
+      }
+    }
+
+  }
+}
+
+
+//-------------------------
+//footer
+//-------------------------
+#footer {
+  background: #868686;
+
+  .footer-container {
+    padding: 48px 0;
+
+    #footer-logo {
+      height: 100%;
+      border: 1px solid #fff;
+      text-align: center;
+      width: 180px;
+      
+      .logo-word {
+        display: block;
+        width: 100%;
+        height: 100%;
+        font-family: "Bellota";
+        font-weight: normal;
+        font-size: 56px;
+        font-style: italic;
+        line-height: normal;
+        color: #fff;
+      }
+    }
+
+    .nav-container {
+      margin: 8px 0 16px;
+      display: flex;
+      justify-content: flex-end;
+
+      li {
+        margin-left: 40px;
+
+        a {
+          color: #fff;
+          //↓文字の縁取り
+          // -webkit-text-stroke: 0.1px #000;
+        }
+      }
+    }
+    .footer-bottom-content {
+      margin-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+       color: #fff;
+      }
+    }
+
+  }
+}

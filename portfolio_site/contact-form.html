@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Form</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/contact-form.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header id="header">
+    <div class="header-container wrapper">
+
+      <!-- ロゴ -->
+       <a href="index.html" class="logo-word">Masa</a>
+
+      <!-- 隠しハンバーガーボタン -->
+      <div id="humburger-btn">
+        <span class="material-icons" id="humburger-icon">
+          menu
+          </span>
+      </div>
+      
+      <!-- ナビゲーション -->
+      <nav id="header-nav">
+        <ul class="nav-container">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="contact-form.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 隠しナビゲーション -->
+    <div id="hidden-nav-container">
+      <div id="close-icon-container">
+        <span class="material-icons">start</span>
+        <p class="close-menu" >Close Menu</p>
+      </div>
+      <nav id="hidden-nav">
+        <div id="hidden-logo">
+          <a href="#" class="hidden-home-link">
+            Masa
+          </a>
+        </div>
+        <ul class="nav-container">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="contact-form.html">Contact</a></li>
+
+          <!-- パターン1 -->
+          <!-- <div id="close-icon-container">
+            <span class="material-icons">close</span>
+            <p>close</p>
+          </div> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <!-- メインヴィジュアル -->
+    <div id="main-visual">
+      <div class="sitename-box">
+        <h1 id="site-name">Contact</h1>
+        <p class="subsite-name">-お問い合わせ-</p>
+      </div>
+    </div>
+
+    <!-- コンタクトフォーム -->
+    <form action="">
+      <div id="contact-form" class="wrapper">
+        <div class="section-header">
+          <h2><span>C</span>ontact Form</h2>
+          <p>-お問い合わせフォーム-</p>
+        </div>
+  
+        <dl id="form-content">
+          <dt class="necessary-content">
+            <p>お名前</p>
+            <span>必須</span>
+          </dt>
+          <dd>
+            <input type="text" name="name" id="name" class="text-form" placeholder=" 例) 山田 太郎">
+          </dd>
+  
+          <dt class="normal-content">
+            <p>電話番号</p>
+          </dt>
+          <dd>
+            <input type="text" name="phone-number" id="phone-number" class="text-form" placeholder="090-1234-5678">
+          </dd>
+  
+          <dt class="necessary-content">
+            <p>メールアドレス</p>
+            <span>必須</span>
+          </dt>
+          <dd>
+            <input type="text" name="mail-address" id="mail-address" class="text-form" placeholder="sample@mail.com">
+          </dd>
+          <dt class="necessary-content">
+            <p>お問い合わせ内容</p>
+            <span>必須</span>
+          </dt>
+          <dd>
+            <textarea name="inquiry" id="inquiry" cols="30" rows="10" placeholder="お問い合わせ内容を記入ください"></textarea>
+          </dd>
+          <div class="contact-btn">
+            <input type="submit" id="submit-btn" value="入力内容を送信">
+          </div>
+        </dl>
+      </div>
+    </form>
+
+  </main>
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-container wrapper">
+      <div id="footer-logo">
+        <a href="#" class="logo-word">Masa</a>
+      </div>
+      <nav id="footer-nav">
+        <ul class="nav-container">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="#">Works</a></li>
+          <li><a href="contact-form.html">Contact</a></li>
+        </ul>
+      </nav>
+      <hr>
+      <div class="footer-bottom-content">
+        <div class="icon-container">
+          <img src="img/GitHub-Mark-Light-32px.png" alt="github">
+        </div>
+        <p>©︎ 2022 Masa Portfolio site</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

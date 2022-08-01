@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Work Details</title>
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/work-details.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+  <!-- ヘッダー -->
+  <header id="header">
+    <div class="header-container wrapper">
+
+      <!-- ロゴ -->
+       <a href="index.html" class="logo-word">Masa</a>
+
+      <!-- 隠しハンバーガーボタン -->
+      <div id="humburger-btn">
+        <span class="material-icons" id="humburger-icon">
+          menu
+          </span>
+      </div>
+      
+      <!-- ナビゲーション -->
+      <nav id="header-nav">
+        <ul class="nav-container">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="contact-form.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- 隠しナビゲーション -->
+    <div id="hidden-nav-container">
+      <div id="close-icon-container">
+        <span class="material-icons">start</span>
+        <p class="close-menu" >Close Menu</p>
+      </div>
+      <nav id="hidden-nav">
+        <div id="hidden-logo">
+          <a href="#" class="hidden-home-link">
+            Masa
+          </a>
+        </div>
+        <ul class="nav-container">
+          <li><a href="#">About</a></li>
+          <li><a href="#">Service</a></li>
+          <li><a href="contact-form.html">Contact</a></li>
+
+        </ul>
+      </nav>
+    </div>
+  </header>
+  
+  <main>
+    <!-- メインヴィジュアル -->
+    <div id="main-visual">
+      <div class="sitename-box">
+        <h1 id="site-name">Work Details</h1>
+        <p class="subsite-name">-作品の詳細-</p>
+      </div>
+    </div>
+
+
+    <!-- 作品詳細 -->
+    <section id="work-product" class="wrapper">
+      <div class="section-header">
+        <h2><span>D</span>ESIGN FOR SMILE</h2>
+      </div>
+
+      <div class="whole-container">
+        <div class="img-container">
+          <img src="img/portfolio_1.png" alt="">
+        </div>
+        <dl class="text-container">
+          <dt>担当範囲</dt>
+          <dd>コーディング</dd>
+          <dt>使用言語</dt>
+          <dd>HTML/Sass/Javascript</dd>
+          <dt>工夫したこと</dt>
+          <dd>
+            <ul>
+              <li>デザインコンプからサイトを制作したこと</li>
+              <li>要素の重なりを各レスポンシブデザインで崩れないように制御したこと</li>
+              <li>Javascriptを用いて、headerやハンバーガーボタンに動きをつけたこと</li>
+            </ul>
+          </dd>
+          <dt>URL</dt>
+          <dd><a href="#" class="url-link"> https://masato-210831.github.io/site-coding_20220304/index.html</a></dd>
+        </dl>
+      </div>
+
+      <!-- <div class="link-container">
+        <a href="#">&larr; 実績一覧へ</a>
+      </div> -->
+    </section>
+
+    <section id="work-slider">
+      <div class="wrapper">
+        <div class="section-header">
+          <h2><span>そ</span>の他の作品</h2>
+        </div>
+        <!-- スライダーのコンテナ -->
+        <div class="swiper" id="swiper">
+          <!-- 必要に応じたwrapper -->
+          <div class="swiper-wrapper">
+            <!-- スライド -->
+            <div class="swiper-slide">
+              <div class="img-container">
+                <a href="work-details1.html">
+                  <img src="img/portfolio_1.png" alt="work_1">
+                </a>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="img-container">
+                <a href="work-details2.html">
+                  <img src="img/portfolio-2.png" alt="work_2">
+                </a>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="img-container">
+                <a href="work-details3.html">
+                  <img src="img/portfolio-3.png" alt="work_3">
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- コンタクト -->
+    <section id="contact">
+      <div class="contact-text">
+        <p>サービスに関する相談、ご不明点などございましたら、お気軽にお問い合わせください。</p>
+      </div>
+      <div id="contact-btn">
+        <a href="#">
+          お問い合わせ
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- footer -->
+  <footer id="footer">
+    <div class="footer-container wrapper">
+      <div id="footer-logo">
+        <a href="index.html" class="logo-word">Masa</a>
+      </div>
+      <nav id="footer-nav">
+        <ul class="nav-container">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#service">Service</a></li>
+          <li><a href="index.html#works">Works</a></li>
+          <li><a href="contact-form.html">Contact</a></li>
+        </ul>
+      </nav>
+      <hr>
+      <div class="footer-bottom-content">
+        <div class="icon-container">
+          <img src="img/GitHub-Mark-Light-32px.png" alt="github">
+        </div>
+        <p>©︎ 2022 Masa Portfolio site</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
