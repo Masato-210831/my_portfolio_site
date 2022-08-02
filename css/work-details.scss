@@ -237,8 +237,12 @@ body {
 #work-product {
   padding: 48px 48px;
 
-  .section-header::before {
-    width: 370px;
+  // .section-header::before {
+  //   width: 370px;
+  // }
+
+  .section-header h2 {
+    border-bottom: 2px solid #000;
   }
 
   .whole-container {
