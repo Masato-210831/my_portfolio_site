@@ -272,8 +272,12 @@ body {
           list-style-position: inside;
 
           li {
-            text-indent: -1rem;
-            padding-left: 1rem;
+            text-indent: -21px;
+            padding-left: 21px;
+
+            &:not(:last-child) {
+              margin-bottom: 2px;
+            }
           }
 
         }
@@ -323,12 +327,11 @@ body {
   .swiper-wrapper {
     .swiper-slide {
       .img-container {
-        width: 400px;
         height: 240px;
 
         img {
-          width: 100%;
           height: 100%;
+          margin: 0 auto;
         }
       }
     }
