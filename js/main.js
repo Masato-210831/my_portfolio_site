@@ -25,6 +25,26 @@
     navigation: {
       nextEl: ".swiper-button-next",
       prevEl: ".swiper-button-prev"
+    },
+
+    breakpoints: {
+      // (疑問)
+      // 0: {
+      //   slidesPerView: 1,
+      // },
+      
+      // 481: {
+      //   slidesPerView: 1.5,
+      // },
+
+      0: {
+          slidesPerView: 1.5,
+        },
+
+      768: {
+        slidesPerView: 2,
+      },
+      
     }
     });
   }
@@ -41,7 +61,6 @@ humbergarBtn.addEventListener('click', () => {
 closeBtn.addEventListener('click', () => {
   header.classList.remove('open');
 });
-
 
 //---------------------------------
 //ページ内ジャンプスクロール
@@ -69,6 +88,13 @@ const smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
       });
     });
   }
+
+  smoothScrollTrigger.forEach(link => {
+    link.addEventListener('click', () => {
+      header.classList.remove('open');
+    });
+  });
+  
 
 
 

@@ -2,6 +2,10 @@ body {
   font-family:"Hiragino Kaku Gothic ProN","Helvetica Nueu", "Arial", "Hiragino Sans","Meiryo", "sans-serif" ;
 
   font-size: 16px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 }
 
 .wrapper {
@@ -16,15 +20,17 @@ body {
   align-items: center;
   margin-bottom: 40px;
   position: relative;
+  border-bottom: 2px solid #000;
+  max-width: fit-content;
 
-  &::before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background-color: #000;
-    bottom: 0;
-    left: 0;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   height: 2px;
+  //   background-color: #000;
+  //   bottom: 0;
+  //   left: 0;
+  // }
 
   h2 {
     font-size: 36px;
@@ -37,6 +43,16 @@ body {
 
   p {
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 }
 
@@ -79,11 +95,19 @@ body {
           margin-right: 40px;
         }
       }
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
     }
 
     //ハンバーガーボタン
     #humburger-btn {
       display: none;
+
+      @media screen and (max-width: 767px) {
+        display: block;
+      }
       
       .material-icons {
         display: block;
@@ -92,6 +116,17 @@ body {
         cursor: pointer;
       }
     } 
+
+    @media screen and (max-width: 480px) {
+      // ,header-containerのcss
+      height: 64px;
+
+      .logo-word {
+        width: 164px;
+        font-size: 48px;
+      }
+    }
+    
   }
 
   // 隠しメニュー
@@ -108,6 +143,10 @@ body {
     z-index: 100;
     opacity: 0;
     transition: .3s;
+
+    @media screen and (max-width: 480px) {
+      width: 50vw;
+    }
    
 
     //close Menuのアイコン
@@ -228,6 +267,19 @@ body {
     font-size: 24px;
     letter-spacing: 12px;
   }
+
+  @media screen and (max-width: 480px) {
+    // #main-visualのcss
+    margin-top: 64px;
+
+    #site-name {
+      font-size: 54px;
+    }
+
+    .subsite-name {
+      font-size: 16px;
+    }
+  }
 }
 
 
@@ -235,16 +287,21 @@ body {
 //Web design
 //-------------------------------
 #works {
-  padding: 48px 0;
-
-  .section-header::before {
-    width: 340px;
-  }
+  padding: 48px 40px;
 
   .whole-works-container {
     display: grid;
-    grid-template-columns: 304px 304px 304px;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 80px;
+
+    @media screen and (max-width: 767px) {
+      gap: 20px;
+    }    
+
+    @media screen and (max-width: 480px) {
+      gap: 40px;
+      grid-template-columns: 1fr;
+    }    
 
     .work-container {
       width: 100%;
@@ -267,6 +324,14 @@ body {
       .works-title {
         font-size: 20px;
         margin-top: 16px;
+
+        @media screen and (max-width: 767px) {
+          font-size: 16px;
+        }
+
+        @media screen and (max-width: 480px) {
+          font-size: 24px;
+        }
       }
     }
   }
@@ -276,17 +341,26 @@ body {
 //Contact
 //------------------------
 #contact {
-  padding: 48px 0 72px;
+  padding: 48px 40px 72px;
   background: #F2F2F2;
 
   .contact-text {
-    width: 600px;
+    // width: 600px;
     margin: 0 auto;
 
     p {
       font-size: 24px;
       line-height: 50px;
       text-align: center;
+
+      @media screen and (max-width: 767px) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 16px;
+        line-height: 2rem;
+      }
     }
   }
 
@@ -322,7 +396,7 @@ body {
   background: #868686;
 
   .footer-container {
-    padding: 48px 0;
+    padding: 48px 40px;
 
     #footer-logo {
       height: 100%;
@@ -333,7 +407,7 @@ body {
       .logo-word {
         display: block;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         font-family: "Bellota";
         font-weight: normal;
         font-size: 56px;
@@ -369,5 +443,23 @@ body {
       }
     }
 
+    @media screen and (max-width: 480px) {
+      #footer-logo {
+        width: 164px;
+        
+        .logo-word {
+          font-size: 48px;
+        }
+      }
+
+      .nav-container {
+        margin: 24px 0 16px;
+
+        li {
+          margin-left: 16px;
+        }
+      }
+    }
   }
+
 }

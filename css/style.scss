@@ -2,6 +2,10 @@ body {
   font-family:"Hiragino Kaku Gothic ProN","Helvetica Nueu", "Arial", "Hiragino Sans","Meiryo", "sans-serif" ;
 
   font-size: 16px;
+
+  @media screen and (max-width: 767px) {
+    font-size: 14px;
+  }
 }
 
 .wrapper {
@@ -16,15 +20,17 @@ body {
   align-items: center;
   margin-bottom: 40px;
   position: relative;
+  border-bottom: 2px solid #000;
+  max-width: fit-content;
 
-  &::before {
-    content: "";
-    position: absolute;
-    height: 2px;
-    background-color: #000;
-    bottom: 0;
-    left: 0;
-  }
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   height: 2px;
+  //   background-color: #000;
+  //   bottom: 0;
+  //   left: 0;
+  // }
 
   h2 {
     font-size: 36px;
@@ -37,6 +43,16 @@ body {
 
   p {
     font-size: 18px;
+  }
+
+  @media screen and (max-width: 480px) {
+    h2 {
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 14px;
+    }
   }
 }
 
@@ -79,11 +95,19 @@ body {
           margin-right: 40px;
         }
       }
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
     }
 
     //ハンバーガーボタン
     #humburger-btn {
       display: none;
+
+      @media screen and (max-width: 767px) {
+        display: block;
+      }
       
       .material-icons {
         display: block;
@@ -92,6 +116,17 @@ body {
         cursor: pointer;
       }
     } 
+
+    @media screen and (max-width: 480px) {
+      // ,header-containerのcss
+      height: 64px;
+
+      .logo-word {
+        width: 164px;
+        font-size: 48px;
+      }
+    }
+    
   }
 
   // 隠しメニュー
@@ -108,6 +143,10 @@ body {
     z-index: 100;
     opacity: 0;
     transition: .3s;
+
+    @media screen and (max-width: 480px) {
+      width: 50vw;
+    }
    
 
     //close Menuのアイコン
@@ -223,6 +262,11 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid #000;
+
+    @media screen and (max-width: 767px) {
+      width: 504px;
+      height: 230px;
+    }
   }
 
   .sitename-box {
@@ -235,9 +279,17 @@ body {
     transform: translate(-50%, -50%);
     border: 2px solid #000;
 
+    @media screen and (max-width: 767px) {
+      width: 480px;
+      height: 208px;
+    }
+
   }
   
   #site-name {
+    // width: 616px;
+    width: 80%;
+    text-align: center;
     font-family: "Myriad Pro";
     font-weight: normal;
     letter-spacing: 12px;
@@ -246,7 +298,32 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+
+    @media screen and (max-width: 767px) {
+      font-size: 20px;
+      letter-spacing: 10px;
+    }
   }
+
+  @media screen and (max-width: 480px) {
+    // #main-visualのcss
+    margin-top: 64px;
+
+    .behind-box {
+      width: 100%;
+    }
+
+    .sitename-box {
+      width: calc(100% - 24px);
+    }
+
+    #site-name {
+      letter-spacing: 8px;
+    }
+
+
+  }
+
 }
 
 //-----------------------------
@@ -257,11 +334,6 @@ body {
   padding-top: 48px;
   padding-bottom: 48px;
 
-  //セクションヘッダーの下線の長さ指定
-  .section-header::before {
-      width: 300px;
-    }
-
   .about-container {
     display: flex;
     justify-content:space-between;
@@ -269,12 +341,31 @@ body {
     .content-container {
       max-width: 680px;
 
+      
       p {
         line-height: 35px;
         letter-spacing: 0.8px;
-
+        
         &:nth-child(3) {
           margin-top: 48px;
+        }
+      }
+
+      // max-widthを%指定に変更 OK?
+      @media screen and (max-width: 767px) {
+        max-width: 60%;
+
+        p {
+          line-height: 30px;
+          letter-spacing: 0.4;
+        }
+      }
+
+      @media screen and (max-width: 480px) {
+        max-width: none;
+
+        p:nth-child(3) {
+          margin-top: 32px;
         }
       }
     }
@@ -282,10 +373,37 @@ body {
     .my-image {
       max-width: 240px;
 
+      // max-widthを%指定に変更 OL?
+      @media screen and (max-width: 767px) {
+        max-width: 30%;
+      }
+
+      @media screen and (max-width: 480px) {
+        max-width: 40%;
+      }
+
       img {
         width: 100%;
       }
     }
+  }
+
+  @media screen and (max-width: 480px) {
+    .about-container {
+      flex-direction: column;
+    }
+
+    .content-container {
+      order: 2;;
+    }
+
+    .my-image {
+      order: 1;
+      // ↓この場所で指定しても効かないのはなぜ？ (疑問)
+      // max-width: 40%;
+      padding-bottom: 16px;
+    }
+
   }
 }
 
@@ -296,17 +414,13 @@ body {
   padding-top: 48px;
   padding-bottom: 48px;
 
-  .section-header::before {
-      width: 320px;
-    }
-
   .service-content-container {
     width: 100%;
-    height: 288px;
     background: #f2f2f2;
     display: flex;
     align-items: center;
     box-shadow: 4px 4px 10px rgba(0,0,0, 0.2 ) ;
+    padding: 32px 0;
 
     &:not(:last-child){
       margin-bottom: 32px;
@@ -324,7 +438,6 @@ body {
     }
 
     .service-text-container {
-      height: 224px;
       padding-right: 32px;
       
       .service-header {
@@ -332,15 +445,52 @@ body {
       }
 
       .text-container{
-        width: 600px;
+        max-width: 600px;
         margin-top: 16px;
 
         p {
           line-height: 40px;
         }
       }
+
     }
   }
+
+  @media screen and (max-width: 767px) {
+    .service-header {
+      font-size: 24px;
+    }
+  
+    .text-container p {
+      line-height: 32px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    .service-content-container{
+      flex-direction: column;
+      box-shadow: 0 0 8px rgba(0,0,0, 0.2 ) ;
+
+      .service-img {
+        max-width: 180px;
+        padding-bottom: 24px;
+      }
+
+      .service-text-container {
+        padding: 0 16px;
+
+        .service-header {
+          text-align: center;
+        }
+
+        .text-container p {
+          line-height: 2rem;
+        }
+      }
+    }
+
+  }
+
 }
 
 //----------------------------
@@ -348,13 +498,9 @@ body {
 //----------------------------
 #works {
   width: 100vw;
-  min-height: 547px;
+  // min-height: 547px;
   background: #F2F2F2;
   padding: 48px 0;
-
-  .section-header::before {
-    width: 230px;
-  }
 
   // スライダー関係のcss
   .swiper-wrap {
@@ -367,14 +513,22 @@ body {
     background: #fff;
     padding: 30px 0;
 
+    @media screen and (max-width: 767px) {
+      height: auto;
+    }
+
     .swiper-wrapper {
       .swiper-slide {
         .img-container {
           height: 240px;
+
+          @media screen and (max-width: 767px) {
+            height: auto;
+            margin: 0 16px;
+          }
   
           img {
             height: 100%;
-            margin: 0 auto;
           }
         }
       }
@@ -437,6 +591,11 @@ body {
       &:hover {
         opacity: .5;
       }
+
+      @media screen and (max-width: 767px) {
+        font-size: 16px;
+      }
+
     }
   }
 }
@@ -448,13 +607,23 @@ body {
   padding-top: 48px;
 
   .contact-text {
-    width: 600px;
+    // width: 600px;
     margin: 0 auto;
 
     p {
       font-size: 24px;
       line-height: 50px;
       text-align: center;
+
+      // (疑問)レスポンシブを意識したcss記述は何が最適？
+      @media screen and (max-width: 767px) {
+        font-size: 20px;
+      }
+
+      @media screen and (max-width: 480px) {
+        font-size: 16px;
+        line-height: 2rem;
+      }
     }
   }
 
@@ -494,7 +663,7 @@ body {
   background: #868686;
 
   .footer-container {
-    padding: 48px 0;
+    padding: 48px 40px;
 
     #footer-logo {
       height: 100%;
@@ -505,7 +674,7 @@ body {
       .logo-word {
         display: block;
         width: 100%;
-        height: 100%;
+        // height: 100%;
         font-family: "Bellota";
         font-weight: normal;
         font-size: 56px;
@@ -541,5 +710,23 @@ body {
       }
     }
 
+    @media screen and (max-width: 480px) {
+      #footer-logo {
+        width: 164px;
+        
+        .logo-word {
+          font-size: 48px;
+        }
+      }
+
+      .nav-container {
+        margin: 24px 0 16px;
+
+        li {
+          margin-left: 16px;
+        }
+      }
+    }
   }
+
 }

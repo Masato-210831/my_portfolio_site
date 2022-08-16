@@ -4,6 +4,12 @@ body {
   font-size: 16px;
 }
 
+@media screen and (max-width: 767px) {
+  body {
+    font-size: 14px;
+  }
+}
+
 .wrapper {
   max-width: 1080px;
   padding: 0 40px;
@@ -19,20 +25,14 @@ body {
           align-items: center;
   margin-bottom: 40px;
   position: relative;
-}
-
-.section-header::before {
-  content: "";
-  position: absolute;
-  height: 2px;
-  background-color: #000;
-  bottom: 0;
-  left: 0;
+  border-bottom: 2px solid #000;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
 }
 
 .section-header h2 {
   font-size: 36px;
-  margin-right: 18px;
 }
 
 .section-header h2 span {
@@ -41,6 +41,15 @@ body {
 
 .section-header p {
   font-size: 18px;
+}
+
+@media screen and (max-width: 480px) {
+  .section-header h2 {
+    font-size: 28px;
+  }
+  .section-header p {
+    font-size: 14px;
+  }
 }
 
 #header {
@@ -90,8 +99,20 @@ body {
   margin-right: 40px;
 }
 
+@media screen and (max-width: 767px) {
+  #header .header-container #header-nav {
+    display: none;
+  }
+}
+
 #header .header-container #humburger-btn {
   display: none;
+}
+
+@media screen and (max-width: 767px) {
+  #header .header-container #humburger-btn {
+    display: block;
+  }
 }
 
 #header .header-container #humburger-btn .material-icons {
@@ -99,6 +120,16 @@ body {
   font-size: 40px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  #header .header-container {
+    height: 64px;
+  }
+  #header .header-container .logo-word {
+    width: 164px;
+    font-size: 48px;
+  }
 }
 
 #header #hidden-nav-container {
@@ -112,6 +143,12 @@ body {
   opacity: 0;
   -webkit-transition: .3s;
   transition: .3s;
+}
+
+@media screen and (max-width: 480px) {
+  #header #hidden-nav-container {
+    width: 50vw;
+  }
 }
 
 #header #hidden-nav-container #close-icon-container {
@@ -216,6 +253,7 @@ body {
   font-weight: normal;
   font-size: 70px;
   letter-spacing: 12px;
+  width: 80vw;
 }
 
 #main-visual .subsite-name {
@@ -224,12 +262,31 @@ body {
   letter-spacing: 12px;
 }
 
-#work-product {
-  padding: 48px 48px;
+@media screen and (max-width: 767px) {
+  #main-visual #site-name {
+    font-size: 56px;
+    width: 80vw;
+  }
+  #main-visual .subsite-name {
+    font-size: 20px;
+  }
 }
 
-#work-product .section-header h2 {
-  border-bottom: 2px solid #000;
+@media screen and (max-width: 480px) {
+  #main-visual {
+    margin-top: 64px;
+  }
+  #main-visual #site-name {
+    font-size: 48px;
+    letter-spacing: 2px;
+  }
+  #main-visual .subsite-name {
+    font-size: 16px;
+  }
+}
+
+#work-product {
+  padding: 48px 48px;
 }
 
 #work-product .whole-container {
@@ -274,6 +331,27 @@ body {
   border-bottom: 1px solid #000;
 }
 
+@media screen and (max-width: 767px) {
+  #work-product .whole-container .img-container {
+    margin-right: 40px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #work-product .whole-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #work-product .whole-container .img-container {
+    margin: 0 0 40px;
+  }
+  #work-product .whole-container .text-container > dt {
+    font-size: 16px;
+  }
+}
+
 #work-product .link-container {
   margin-top: 40px;
 }
@@ -284,34 +362,46 @@ body {
 
 #work-slider {
   padding: 48px 0;
+  /* 次ページボタンのスタイル */
+  /* 前ページボタンのスタイル */
 }
 
-#work-slider .section-header {
-  margin: 0 0 48px 0;
-}
-
-#work-slider .section-header::before {
-  width: 220px;
-}
-
-.swiper {
+#work-slider .swiper {
   width: 100%;
   height: 296px;
   background: #fff;
   padding: 30px 0;
 }
 
-.swiper .swiper-wrapper .swiper-slide .img-container {
+@media screen and (max-width: 767px) {
+  #work-slider .swiper {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #work-slider .swiper {
+    padding: 0;
+  }
+}
+
+#work-slider .swiper .swiper-wrapper .swiper-slide .img-container {
   height: 240px;
 }
 
-.swiper .swiper-wrapper .swiper-slide .img-container img {
-  height: 100%;
-  margin: 0 auto;
+@media screen and (max-width: 767px) {
+  #work-slider .swiper .swiper-wrapper .swiper-slide .img-container {
+    height: auto;
+    margin: 0 16px;
+  }
 }
 
-.swiper-button-prev,
-.swiper-button-next {
+#work-slider .swiper .swiper-wrapper .swiper-slide .img-container img {
+  height: 100%;
+}
+
+#work-slider .swiper-button-prev,
+#work-slider .swiper-button-next {
   width: 24px;
   /* ボタンの幅 */
   height: 40px;
@@ -323,8 +413,7 @@ body {
   margin-top: 0;
 }
 
-/* 次ページボタンのスタイル */
-.swiper-button-next {
+#work-slider .swiper-button-next {
   background-image: url(../img/right_arrow.png);
   width: 45px;
   height: 45px;
@@ -332,12 +421,11 @@ body {
   opacity: .7;
 }
 
-.swiper-button-next:hover {
+#work-slider .swiper-button-next:hover {
   opacity: 1;
 }
 
-/* 前ページボタンのスタイル */
-.swiper-button-prev {
+#work-slider .swiper-button-prev {
   background-image: url(../img/left_arrow.png);
   width: 45px;
   height: 45px;
@@ -345,22 +433,21 @@ body {
   opacity: .7;
 }
 
-.swiper-button-prev:hover {
+#work-slider .swiper-button-prev:hover {
   opacity: 1;
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
+#work-slider .swiper-button-prev:after,
+#work-slider .swiper-button-next:after {
   display: none;
 }
 
 #contact {
-  padding: 48px 0 72px;
+  padding: 48px 40px 72px;
   background: #F2F2F2;
 }
 
 #contact .contact-text {
-  width: 600px;
   margin: 0 auto;
 }
 
@@ -368,6 +455,19 @@ body {
   font-size: 24px;
   line-height: 50px;
   text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  #contact .contact-text p {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #contact .contact-text p {
+    font-size: 16px;
+    line-height: 2rem;
+  }
 }
 
 #contact #contact-btn {
@@ -397,7 +497,7 @@ body {
 }
 
 #footer .footer-container {
-  padding: 48px 0;
+  padding: 48px 40px;
 }
 
 #footer .footer-container #footer-logo {
@@ -410,7 +510,6 @@ body {
 #footer .footer-container #footer-logo .logo-word {
   display: block;
   width: 100%;
-  height: 100%;
   font-family: "Bellota";
   font-weight: normal;
   font-size: 56px;
@@ -452,5 +551,20 @@ body {
 
 #footer .footer-container .footer-bottom-content p {
   color: #fff;
+}
+
+@media screen and (max-width: 480px) {
+  #footer .footer-container #footer-logo {
+    width: 164px;
+  }
+  #footer .footer-container #footer-logo .logo-word {
+    font-size: 48px;
+  }
+  #footer .footer-container .nav-container {
+    margin: 24px 0 16px;
+  }
+  #footer .footer-container .nav-container li {
+    margin-left: 16px;
+  }
 }
 /*# sourceMappingURL=work-details.css.map */
