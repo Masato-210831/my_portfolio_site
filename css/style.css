@@ -483,6 +483,7 @@ body {
   }
   #service .service-content-container .service-text-container .service-header {
     text-align: center;
+    font-size: 24px;
   }
   #service .service-content-container .service-text-container .text-container p {
     line-height: 2rem;
