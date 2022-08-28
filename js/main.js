@@ -29,17 +29,17 @@
 
     breakpoints: {
       // (疑問)
-      // 0: {
-      //   slidesPerView: 1,
-      // },
-      
-      // 481: {
-      //   slidesPerView: 1.5,
-      // },
-
       0: {
-          slidesPerView: 1.5,
-        },
+        slidesPerView: 1,
+      },
+      
+      481: {
+        slidesPerView: 1.5,
+      },
+
+      // 0: {
+      //     slidesPerView: 1.5,
+      //   },
 
       768: {
         slidesPerView: 2,

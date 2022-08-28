@@ -394,13 +394,11 @@ body {
     }
 
     .content-container {
-      order: 2;;
+      order: 2;
     }
 
     .my-image {
       order: 1;
-      // ↓この場所で指定しても効かないのはなぜ？ (疑問)
-      // max-width: 40%;
       padding-bottom: 16px;
     }
 
@@ -624,6 +622,10 @@ body {
       @media screen and (max-width: 480px) {
         font-size: 16px;
         line-height: 2rem;
+
+        br {
+          display: none;
+        }
       }
     }
   }

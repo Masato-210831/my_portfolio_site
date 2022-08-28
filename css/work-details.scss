@@ -35,11 +35,11 @@ body {
     font-size: 18px;
   }
 
-  // (疑問) このページだけ28pxはおかしい？
+  // (疑問3) このページだけ28pxはおかしい？
   @media screen and (max-width: 480px) {
-    h2 {
-      font-size: 28px;
-    }
+    // h2 {
+    //   font-size: 28px;
+    // }
 
     p {
       font-size: 14px;
@@ -481,6 +481,10 @@ body {
       @media screen and (max-width: 480px) {
         font-size: 16px;
         line-height: 2rem;
+
+        br {
+          display: none;
+        }
       }
     }
   }

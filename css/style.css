@@ -617,6 +617,9 @@ body {
     font-size: 16px;
     line-height: 2rem;
   }
+  #contact .contact-text p br {
+    display: none;
+  }
 }
 
 #contact #contact-btn {
